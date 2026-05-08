@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spacebar Sidekicks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white font-sans min-h-screen">
+
+  <div class="max-w-7xl mx-auto px-6 py-12">
+
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 text-sm mb-5">
+        🚀 Intergenerational Cyber Safety Adventure
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6">
+        Spacebar <span class="text-cyan-400">Sidekicks</span>
+      </h1>
+
+      <p class="max-w-3xl mx-auto text-lg text-slate-300 leading-relaxed">
+        A fun digital safety journey where Tech Explorers and Silver Surfers team up to defend against scams, protect privacy, and build a powerful online Safety Pact together.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+        <div class="h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 mb-5"></div>
+        <div class="text-sm text-cyan-300 mb-2">Week 1</div>
+        <h2 class="text-2xl font-bold mb-4">The Secret Code</h2>
+        <p class="text-slate-300 text-sm">Mastering Strong Passwords & MFA Basics</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+        <div class="h-2 rounded-full bg-gradient-to-r from-rose-500 to-orange-400 mb-5"></div>
+        <div class="text-sm text-cyan-300 mb-2">Week 2</div>
+        <h2 class="text-2xl font-bold mb-4">Spot the Glitch</h2>
+        <p class="text-slate-300 text-sm">Identifying Clickbait, AI Scams & Phishing</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+        <div class="h-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 mb-5"></div>
+        <div class="text-sm text-cyan-300 mb-2">Week 3</div>
+        <h2 class="text-2xl font-bold mb-4">Digital Borders</h2>
+        <p class="text-slate-300 text-sm">Protecting Privacy & Managing Permissions</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+        <div class="h-2 rounded-full bg-gradient-to-r from-emerald-500 to-lime-400 mb-5"></div>
+        <div class="text-sm text-cyan-300 mb-2">Week 4</div>
+        <h2 class="text-2xl font-bold mb-4">The Safety Pact</h2>
+        <p class="text-slate-300 text-sm">Mentorship & Digital Citizenship</p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 mb-16">
+
+      <div class="bg-slate-900 border border-cyan-500/20 rounded-3xl p-8">
+        <h2 class="text-3xl font-bold mb-3 text-cyan-300">🎮 Spot the Glitch Game</h2>
+
+        <div id="quiz-container">
+          <p id="question" class="text-2xl font-semibold mb-6"></p>
+          <div id="answers" class="space-y-4"></div>
+        </div>
+
+        <div id="result" class="hidden text-center py-10">
+          <div class="text-6xl mb-4">🛡️</div>
+          <h3 class="text-4xl font-black text-emerald-400 mb-3">Safety Mastery Complete!</h3>
+          <p id="score" class="text-xl text-slate-300"></p>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-purple-500/20 rounded-3xl p-8">
+        <h2 class="text-3xl font-bold mb-3 text-purple-300">🔐 Password Shield Generator</h2>
+
+        <textarea
+          id="passwordInput"
+          placeholder="Type a sentence here..."
+          class="w-full h-32 rounded-2xl bg-black/30 border border-white/10 p-4 text-white"
+        ></textarea>
+
+        <button
+          onclick="generatePassword()"
+          class="mt-5 px-6 py-3 rounded-full bg-purple-500 hover:bg-purple-400 transition"
+        >
+          Generate Password
+        </button>
+
+        <div class="mt-6 bg-black/40 border border-purple-500/20 rounded-2xl p-5">
+          <div class="text-sm text-purple-300 mb-2">Generated Password</div>
+          <div id="passwordResult" class="text-2xl font-mono break-all text-white">
+            Your secure password will appear here...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-16">
+      <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-3xl p-8">
+        <h3 class="text-2xl font-bold mb-4">📬 Inbox Investigation</h3>
+        <ul class="space-y-3 text-slate-300">
+          <li>✔ Check URLs carefully</li>
+          <li>✔ Watch for urgent language</li>
+          <li>✔ Look for spelling mistakes</li>
+          <li>✔ Never click unknown links</li>
+        </ul>
+      </div>
+
+      <div class="bg-orange-500/10 border border-orange-500/20 rounded-3xl p-8">
+        <h3 class="text-2xl font-bold mb-4">🤖 AI or Real?</h3>
+        <p class="text-slate-300">
+          Learn how scammers use fake voices, AI-generated images, and cloned messages to trick people online.
+        </p>
+      </div>
+
+      <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-3xl p-8">
+        <h3 class="text-2xl font-bold mb-4">🤝 The Safety Pact</h3>
+        <p class="text-slate-300">
+          Build trust across generations by becoming digital sidekicks who protect each other online.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 rounded-[2rem] p-10 text-center">
+      <div class="text-6xl mb-4">🌟</div>
+      <h2 class="text-4xl font-black mb-4">Spacebar Safety Pact</h2>
+
+      <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 text-left mt-8">
+        <div class="bg-black/20 rounded-2xl p-6 border border-white/10">
+          🔍 I will not click urgent links without checking first.
+        </div>
+
+        <div class="bg-black/20 rounded-2xl p-6 border border-white/10">
+          🔒 I will protect passwords and only share with trusted Safety Heroes.
+        </div>
+
+        <div class="bg-black/20 rounded-2xl p-6 border border-white/10">
+          💙 I will report glitchy behavior and help keep the internet kind.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const quizQuestions = [
+      {
+        question: 'Which message looks most suspicious?',
+        options: [
+          'Your library book is due tomorrow.',
+          'URGENT! Your bank account will close in 5 minutes unless you click now!',
+          'Your teacher posted homework online.'
+        ],
+        answer: 1
+      },
+      {
+        question: 'Which is safest to share online?',
+        options: [
+          'Home address',
+          'Favorite color',
+          'Credit card number'
+        ],
+        answer: 1
+      },
+      {
+        question: 'What makes a strong password?',
+        options: [
+          'password123',
+          'Your birthday',
+          'A sentence with symbols and numbers'
+        ],
+        answer: 2
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const questionEl = document.getElementById('question');
+      const answersEl = document.getElementById('answers');
+
+      questionEl.innerText = quizQuestions[currentQuestion].question;
+      answersEl.innerHTML = '';
+
+      quizQuestions[currentQuestion].options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.innerText = option;
+        button.className = 'w-full text-left bg-white/5 hover:bg-cyan-500/20 border border-white/10 rounded-2xl p-4 transition-all';
+
+        button.onclick = () => selectAnswer(index);
+
+        answersEl.appendChild(button);
+      });
+    }
+
+    function selectAnswer(index) {
+      if (index === quizQuestions[currentQuestion].answer) {
+        score++;
+      }
+
+      currentQuestion++;
+
+      if (currentQuestion < quizQuestions.length) {
+        loadQuestion();
+      } else {
+        document.getElementById('quiz-container').classList.add('hidden');
+        document.getElementById('result').classList.remove('hidden');
+        document.getElementById('score').innerText = `Your Team Score: ${score} / ${quizQuestions.length}`;
+      }
+    }
+
+    function generatePassword() {
+      const input = document.getElementById('passwordInput').value;
+      const words = input.split(' ');
+      let password = '';
+
+      words.forEach((word, index) => {
+        if (word.length > 0) {
+          password += index % 2 === 0 ? word[0].toUpperCase() : word[0].toLowerCase();
+        }
+      });
+
+      password += '!2026';
+
+      document.getElementById('passwordResult').innerText = password;
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>
+
+<!--
+=====================================================
+SPACEBAR SIDEKICKS LICENSE
+=====================================================
+
+Copyright (c) 2026 Christopher Lewis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to use,
+copy, modify, merge, publish, distribute, and display the Software for:
+
+• Educational programs
+• Community workshops
+• Libraries and schools
+• Nonprofit organizations
+• Cyber safety awareness initiatives
+
+Commercial resale of the original unmodified Software as a standalone product
+is prohibited without written permission from the copyright holder.
+
+Attribution is appreciated when possible:
+“Spacebar Sidekicks created by Christopher Lewis.”
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+=====================================================
+RECOMMENDED USAGE RIGHTS
+=====================================================
+
+✔ Allowed:
+- Educational use
+- Classroom teaching
+- Community events
+- Library workshops
+- Nonprofit training
+- Modification for local programs
+- Embedding into websites
+- Hosting online
+
+✘ Not Allowed:
+- Selling the original project as your own
+- Removing author attribution from original source
+- Repackaging for commercial resale without permission
+
+=====================================================
+
+
